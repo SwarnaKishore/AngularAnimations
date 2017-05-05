@@ -1,3 +1,8 @@
-<h1>
-  {{title}}
-</h1>
+
+<h1 [@wobble]> {{wobble}}</h1>
+<h1 class="center" *ngIf="flyIn" [@flyInOut]> {{flyInOut}} </h1>
+<h1 class="center" *ngIf="bounce" [@flyInOutBounce]> {{flyInOutBounce}} </h1>
+
+
+<button (click) = "toggle()">Toggle flyInOut</button>
+<button (click) = "toggleBounce()">Toggle flyInOut Bounce </button>
