@@ -47,15 +47,22 @@ import { trigger, style, transition, keyframes, animate, group, NgZone, state }
         style({opacity: 0, transform: 'translateX(100%)',  offset: 1.0})
       ]))
     ])
-  ])
+  ]),
+
+  trigger('fadeInDown', [
+      transition('* => *', animate('1000ms ease-out', keyframes([
+        style({opacity: 0, transform: 'translate3d(0, -100%, 0)', offset: 0}),
+        style({opacity: 1, transform: 'none', offset: 1})
+      ])))
+    ])
   ]
-  
 })
 export class AppComponent {
   wobble = 'I am wobble';
   flyInOut = 'I am flyInOut';
   flyInOutBounce = 'I am flyInOut Bounce'
   flyIn:boolean = false;
+  fadeInDown = 'fade in down test';
   bounce:boolean = false;
 
   toggle()
